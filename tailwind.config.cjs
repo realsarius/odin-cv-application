@@ -16,6 +16,10 @@ module.exports = {
         },
         width: {
           128: '32rem',
+          a4: '210mm',
+        },
+        height: {
+          a4: '297mm',
         },
         borderWidth: {
           DEFAULT: '1px',

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import GeneralInformation from './components/Output/GeneralInformation';
 import GeneralInformationInput from './components/Input/GeneralInformationInput';
+import ProfileInput from './components/Input/ProfileInput';
+import GeneralInformationPreview from './components/Preview/GeneralInformationPreview';
 
 const App = () => {
   const [user, setUser] = useState({
@@ -44,21 +46,28 @@ const App = () => {
   };
 
   return (
-    <div className="bg-[#F3F4F6] w-full flex justify-between px-5 pt-5 gap-4 sm:gap-8">
-      <div className="left-side w-6/12 flex flex-col ">
-        {!infoEditState ? (
-          <GeneralInformation user={user} showEditState={showEditState} />
-        ) : (
-          <GeneralInformationInput
-            onSaveUserData={saveUserDataHandler}
-            showEditState={showEditState}
-            user={user}
-            handleInputChange={handleInputChange}
-          />
-        )}
+    <div className="bg-[#F3F4F6] w-full h-screen flex justify-between px-5 pt-5 gap-4 sm:gap-8">
+      <div className="left-side w-6/12 flex flex-col gap-6">
+        <div className="user-section">
+          {!infoEditState ? (
+            <GeneralInformation user={user} showEditState={showEditState} />
+          ) : (
+            <GeneralInformationInput
+              onSaveUserData={saveUserDataHandler}
+              showEditState={showEditState}
+              user={user}
+              handleInputChange={handleInputChange}
+            />
+          )}
+        </div>
+        <div className="profile-section">
+          <ProfileInput />
+        </div>
       </div>
-      <div className="right-side w-6/12 border-solid border-red-600 border-4">
-        <p>asd</p>
+      <div className="right-side border-solid border-gray-200 rounded-md shadow-lg border-4 w-[210mm] h-[297mm]">
+        <div className="page py-8 px-4">
+          <GeneralInformationPreview user={user} />
+        </div>
       </div>
     </div>
   );

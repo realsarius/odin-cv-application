@@ -39,7 +39,7 @@ const GeneralInformation = ({
 
   return (
     <div
-      className="left-side border-solid rounded-2xl border-gray-200 border-2 p-5 cursor-pointer flex flex-col gap-3 bg-[#ffffff]"
+      className="border-solid rounded-2xl border-gray-200 border-2 p-5 cursor-pointer flex flex-col gap-3 bg-[#ffffff] shadow-md"
       onClick={showEditInfo}
     >
       <p className="text-lg font-bold">{user.name}</p>
