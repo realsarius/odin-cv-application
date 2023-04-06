@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 interface UserProps {
   name: string;
   job: string;
@@ -8,7 +9,7 @@ interface UserProps {
 
 interface GeneralInformationProps {
   user: UserProps;
-  showEditState: boolean;
+  showEditState: (value: boolean) => boolean;
 }
 
 const GeneralInformation = ({
@@ -23,24 +24,34 @@ const GeneralInformation = ({
     if (user.email.trim().length === 0) {
       return true;
     }
+    return false;
   };
 
   const checkIfPhoneEmpty = () => {
     if (user.phone.trim().length === 0) {
       return true;
     }
+    return false;
   };
 
   const checkIfAddressEmpty = () => {
     if (user.address.trim().length === 0) {
       return true;
     }
+    return false;
   };
 
   return (
     <div
       className="border-solid rounded-2xl border-gray-200 border-2 p-5 cursor-pointer flex flex-col gap-3 bg-[#ffffff] shadow-md"
       onClick={showEditInfo}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          showEditInfo();
+        }
+      }}
+      role="button"
+      tabIndex={0}
     >
       <p className="text-lg font-bold">{user.name}</p>
       <div className="text-sm flex items-center gap-2">
