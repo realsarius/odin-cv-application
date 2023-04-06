@@ -2,11 +2,25 @@
 import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react';
 
+interface Education {
+  id: string;
+  school: string;
+  degree: string;
+  city: string;
+  country: string;
+}
+
+interface EducationInputAddProps {
+  addEducationState: string;
+  setAddEducationState: (state: boolean) => void;
+  educationHandler: (education: Education) => void;
+}
+
 const EducationInputAdd = ({
   addEducationState,
   setAddEducationState,
   educationHandler,
-}) => {
+}: EducationInputAddProps) => {
   const [school, setSchool] = useState('');
   const [degree, setDegree] = useState('');
   const [city, setCity] = useState('');

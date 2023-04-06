@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import EducationInputAdd from './EducationInputAdd';
+import { Education } from '../../types';
 
-const EducationInput = ({ hidden, educationHandler }) => {
+interface EducationInputProps {
+  hidden: boolean;
+  educationHandler: (newItem: Education) => void;
+}
+
+const EducationInput = ({ hidden, educationHandler }: EducationInputProps) => {
   const [addEducationState, setAddEducationState] = useState(false);
 
   const clickHandler = () => {
@@ -31,7 +37,7 @@ const EducationInput = ({ hidden, educationHandler }) => {
         </div>
       </div>
       <EducationInputAdd
-        addEducationState={addEducationState}
+        addEducationState={addEducationState.toString()}
         setAddEducationState={setAddEducationState}
         educationHandler={educationHandler}
       />

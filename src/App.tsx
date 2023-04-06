@@ -7,6 +7,7 @@ import ProfileOutput from './components/Output/ProfileOutput';
 import ProfilePreview from './components/Preview/ProfilePreview';
 import EducationOutput from './components/Output/EducationOutput';
 import EducationPreview from './components/Preview/EducationPreview';
+import { User } from './types';
 
 type Education = {
   id: string;
@@ -43,7 +44,6 @@ const App = () => {
   };
 
   const educationHandler = (newItem: Education) => {
-    console.log(newItem);
     setEducation((prevEducation) => [...prevEducation, newItem]);
   };
 

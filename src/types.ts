@@ -1,4 +1,5 @@
-type User = {
+/* eslint-disable @typescript-eslint/no-unused-vars */
+export type User = {
   name: string;
   job: string;
   email: string;
@@ -6,7 +7,7 @@ type User = {
   address: string;
 };
 
-type Education = {
+export type Education = {
   id: string;
   school: string;
   degree: string;

@@ -36,8 +36,6 @@ const EducationOutput = ({
       </li>
     ));
 
-    console.log(data);
-
     return <ul className="flex flex-col gap-2">{data}</ul>;
   };
 

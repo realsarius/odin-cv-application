@@ -1,4 +1,5 @@
-import { Education } from 'src/types.ts';
+/* eslint-disable react/jsx-one-expression-per-line */
+import { Education } from '../../types';
 
 interface EducationPreviewProps {
   education: Education[];
@@ -12,8 +13,6 @@ const EducationPreview = ({ education }: EducationPreviewProps) => {
         <p className="ml-1 italic">{ed.degree}</p>
       </li>
     ));
-
-    console.log(data);
 
     return <ul className="flex flex-col gap-2">{data}</ul>;
   };
