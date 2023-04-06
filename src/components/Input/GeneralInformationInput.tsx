@@ -23,7 +23,7 @@ interface GeneralInformationInputProps {
     job: string,
     email: string,
     phone: string,
-    address: string
+    address: string,
   ) => void;
 }
 
@@ -47,7 +47,7 @@ const GeneralInformationInput = ({
       enteredJob,
       enteredEmail,
       enteredPhone,
-      enteredAddress
+      enteredAddress,
     );
   };
 
@@ -58,7 +58,7 @@ const GeneralInformationInput = ({
       event.target.value,
       enteredEmail,
       enteredPhone,
-      enteredAddress
+      enteredAddress,
     );
   };
 
@@ -69,7 +69,7 @@ const GeneralInformationInput = ({
       enteredJob,
       event.target.value,
       enteredPhone,
-      enteredAddress
+      enteredAddress,
     );
   };
 
@@ -80,7 +80,7 @@ const GeneralInformationInput = ({
       enteredJob,
       enteredEmail,
       event.target.value,
-      enteredAddress
+      enteredAddress,
     );
   };
 
@@ -91,7 +91,7 @@ const GeneralInformationInput = ({
       enteredJob,
       enteredEmail,
       enteredPhone,
-      event.target.value
+      event.target.value,
     );
   };
 
@@ -134,7 +134,7 @@ const GeneralInformationInput = ({
         <input
           onChange={nameChangeHandler}
           id="name"
-          className="w-4/6 antialiased px-3 font-sans py-3 outline-none bg-[#F3F4F6] rounded-lg"
+          className="w-full lg:w-4/6 antialiased px-3 font-sans py-3 outline-none bg-[#F3F4F6] rounded-lg"
           value={enteredName}
         />
       </div>
@@ -149,13 +149,13 @@ const GeneralInformationInput = ({
         <input
           onChange={jobChangeHandler}
           id="job"
-          className="w-4/6 antialiased px-3 font-sans py-3 outline-none bg-[#F3F4F6] rounded-lg"
+          className="w-full lg:w-4/6 antialiased px-3 font-sans py-3 outline-none bg-[#F3F4F6] rounded-lg"
           value={enteredJob}
         />
       </div>
       {/* 2 input group */}
-      <div className="input-class flex w-full justify-between gap-4">
-        <div className="input-class flex flex-col w-6/12">
+      <div className="input-class flex flex-col lg:flex-row w-full justify-between gap-4">
+        <div className="input-class flex flex-col w-full lg:w-6/12">
           <label
             htmlFor="email"
             className="mt-4 ml-2 antialiased text-sm font-semibold"
@@ -170,10 +170,10 @@ const GeneralInformationInput = ({
             value={enteredEmail}
           />
         </div>
-        <div className="input-class flex flex-col w-6/12">
+        <div className="input-class flex flex-col w-full lg:w-6/12">
           <label
             htmlFor="phone"
-            className="mt-4 ml-2 antialiased text-sm font-semibold"
+            className="lg:mt-4 ml-2 antialiased text-sm font-semibold"
           >
             Phone
             <span className="ml-2 text-xs text-gray-400">recommended</span>
@@ -197,7 +197,7 @@ const GeneralInformationInput = ({
         <input
           onChange={addressChangeHandler}
           id="address"
-          className="w-4/6 antialiased px-3 font-sans py-3 outline-none bg-[#F3F4F6] rounded-lg"
+          className="w-full lg:w-4/6 antialiased px-3 font-sans py-3 outline-none bg-[#F3F4F6] rounded-lg"
           value={enteredAddress}
         />
       </div>

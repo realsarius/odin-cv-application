@@ -41,7 +41,9 @@ const ProfileOutput = ({ saveProfileHandler }: ProfileOutputProps) => {
           <img
             src="src/assets/down-arrow.svg"
             alt="business-card"
-            className="w-6 rounded-lg"
+            className={`w-6 rounded-lg transition-all duration-300 ease-in-out origin-center ${
+              !showProfileInput ? 'rotate-180' : 'rotate-0'
+            }`}
           />
         </div>
       </div>
