@@ -6,6 +6,15 @@ import GeneralInformationPreview from './components/Preview/GeneralInformationPr
 import ProfileOutput from './components/Output/ProfileOutput';
 import ProfilePreview from './components/Preview/ProfilePreview';
 import EducationOutput from './components/Output/EducationOutput';
+import EducationPreview from './components/Preview/EducationPreview';
+
+type Education = {
+  id: string;
+  school: string;
+  degree: string;
+  city: string;
+  country: string;
+};
 
 const App = () => {
   const [user, setUser] = useState({
@@ -15,14 +24,7 @@ const App = () => {
     phone: '',
     address: '',
   });
-  const [education, setEducation] = useState([
-    {
-      school: 'John Doe',
-      degree: '',
-      city: '',
-      country: '',
-    },
-  ]);
+  const [education, setEducation] = useState<Education[]>([]);
   const [profile, setProfile] = useState('');
   const [infoEditState, setInfoEditState] = useState(false);
   const [educationEditState, setEducationEditState] = useState(false);
@@ -38,6 +40,11 @@ const App = () => {
 
   const changeEducationState = () => {
     setEducationEditState((prevState) => !prevState);
+  };
+
+  const educationHandler = (newItem: Education) => {
+    console.log(newItem);
+    setEducation((prevEducation) => [...prevEducation, newItem]);
   };
 
   const saveUserDataHandler = (enteredUserData: User) => {
@@ -86,13 +93,18 @@ const App = () => {
           <ProfileOutput saveProfileHandler={saveProfileHandler} />
         </div>
         <div className="education-section">
-          <EducationOutput changeEducationState={changeEducationState} />
+          <EducationOutput
+            changeEducationState={changeEducationState}
+            educationHandler={educationHandler}
+            education={education}
+          />
         </div>
       </div>
       <div className="right-side border-solid border-gray-200 rounded-md shadow-lg border-4 min-w-[210mm] w-[210mm] h-[297mm]">
         <div className="page py-16 px-16">
           <GeneralInformationPreview user={user} />
           <ProfilePreview profile={profile} />
+          <EducationPreview education={education} />
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import EducationInputAdd from './EducationInputAdd';
 
-const EducationInput = ({ hidden }) => {
+const EducationInput = ({ hidden, educationHandler }) => {
   const [addEducationState, setAddEducationState] = useState(false);
 
   const clickHandler = () => {
@@ -33,6 +33,7 @@ const EducationInput = ({ hidden }) => {
       <EducationInputAdd
         addEducationState={addEducationState}
         setAddEducationState={setAddEducationState}
+        educationHandler={educationHandler}
       />
     </div>
   );

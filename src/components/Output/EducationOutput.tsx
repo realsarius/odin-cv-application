@@ -1,7 +1,26 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import { useState } from 'react';
 import EducationInput from '../Input/EducationInput';
 
-const EducationOutput = ({ changeEducationState }) => {
+type Education = {
+  id: string;
+  school: string;
+  degree: string;
+  city: string;
+  country: string;
+};
+
+interface EducationOutputProps {
+  changeEducationState: (state: boolean) => void;
+  educationHandler: (newItem: Education) => void;
+  education: Education[];
+}
+
+const EducationOutput = ({
+  changeEducationState,
+  educationHandler,
+  education,
+}: EducationOutputProps) => {
   const [showEducationInput, setShowEducationInput] = useState(true);
 
   const onEducationState = () => {
@@ -9,12 +28,25 @@ const EducationOutput = ({ changeEducationState }) => {
     changeEducationState(showEducationInput);
   };
 
+  const printEducations = () => {
+    const data = education.map((ed) => (
+      <li key={ed.id} className="flex">
+        <p className="font-bold font-sans antialiased">{ed.school}</p>,{' '}
+        <p className="ml-1 italic">{ed.degree}</p>
+      </li>
+    ));
+
+    console.log(data);
+
+    return <ul className="flex flex-col gap-2">{data}</ul>;
+  };
+
   return (
-    <div className="border-solid rounded-2xl border-gray-200 border-2 flex flex-col gap-3 bg-[#ffffff] shadow-md px-5">
+    <div className="border-solid rounded-2xl border-gray-200 border-2 flex flex-col bg-[#ffffff] shadow-md px-5">
       <div
         role="button"
         tabIndex={0}
-        className={`w-full flex items-center justify-between py-5 cursor-pointer outline-none`}
+        className="w-full flex items-center justify-between py-5 cursor-pointer outline-none"
         onClick={onEducationState}
         onKeyDown={(event) => {
           if (event.key === 'Enter' || event.key === ' ') {
@@ -40,7 +72,15 @@ const EducationOutput = ({ changeEducationState }) => {
           />
         </div>
       </div>
-      <EducationInput hidden={showEducationInput} />
+      <div className="flex flex-col gap-4">
+        <div className={`flex flex-col ${showEducationInput ? 'hidden' : ''}`}>
+          {printEducations()}
+        </div>
+        <EducationInput
+          hidden={showEducationInput}
+          educationHandler={educationHandler}
+        />
+      </div>
     </div>
   );
 };
