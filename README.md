@@ -2,7 +2,7 @@
 
 This is a web application that allows users to create and preview their resumes in a user-friendly manner. It is built with React, TypeScript and Tailwind, and it was created as a project for The Odin Project curriculum.
 
-![CV Application Screenshot](ss.gif)
+![CV Application Screenshot](ss2.gif)
 
 ## Features
 
