@@ -39,7 +39,7 @@ const EducationInput = ({ hidden, educationHandler }: EducationInputProps) => {
         </div>
       </div>
       <EducationInputAdd
-        addEducationState={addEducationState.toString()}
+        addEducationState={addEducationState}
         setAddEducationState={setAddEducationState}
         educationHandler={educationHandler}
       />
