@@ -1,5 +1,8 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import emailPng from '../../assets/mail-inbox-app.png';
+import phonePng from '../../assets/phone-call.png';
+import addressPng from '../../assets/location.png';
+
 interface UserProps {
   name: string;
   job: string;
@@ -64,7 +67,7 @@ const GeneralInformation = ({
         )}
       </div>
       <div className="text-sm flex items-center gap-2">
-        <img src="src/assets/phone-call.png" className="w-5" alt="email-icon" />{' '}
+        <img src={phonePng} className="w-5" alt="email-icon" />{' '}
         {checkIfPhoneEmpty() ? (
           <p className="text-gray-500">Phone</p>
         ) : (
@@ -72,7 +75,7 @@ const GeneralInformation = ({
         )}
       </div>
       <div className="text-sm flex items-center gap-2">
-        <img src="src/assets/location.png" className="w-5" alt="email-icon" />{' '}
+        <img src={addressPng} className="w-5" alt="email-icon" />{' '}
         {checkIfAddressEmpty() ? (
           <p className="text-gray-500">Address</p>
         ) : (

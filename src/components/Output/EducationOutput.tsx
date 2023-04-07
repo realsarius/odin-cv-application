@@ -1,4 +1,8 @@
 /* eslint-disable react/jsx-one-expression-per-line */
+
+import graduationSvg from '../../assets/graduation-cap.svg';
+import downArrowSvg from '../../assets/down-arrow.svg';
+
 import { useState } from 'react';
 import EducationInput from '../Input/EducationInput';
 
@@ -54,7 +58,7 @@ const EducationOutput = ({
       >
         <div className="flex items-center gap-4">
           <img
-            src="src/assets/graduation-cap.svg"
+            src={graduationSvg}
             alt="business-card"
             className="w-9 rounded-lg"
           />
@@ -62,7 +66,7 @@ const EducationOutput = ({
         </div>
         <div>
           <img
-            src="src/assets/down-arrow.svg"
+            src={downArrowSvg}
             alt="business-card"
             className={`w-6 rounded-lg transition-all duration-300 ease-in-out origin-center ${
               !showEducationInput ? 'rotate-180' : 'rotate-0'
