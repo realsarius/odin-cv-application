@@ -2,6 +2,8 @@ import { useState } from 'react';
 import EducationInputAdd from './EducationInputAdd';
 import { Education } from '../../types';
 
+import plusSvg from '../../assets/plus.svg';
+
 interface EducationInputProps {
   hidden: boolean;
   educationHandler: (newItem: Education) => void;
@@ -30,7 +32,7 @@ const EducationInput = ({ hidden, educationHandler }: EducationInputProps) => {
             }
           }}
         >
-          <img src="src/assets/plus.svg" className="w-7" alt="plus" />
+          <img src={plusSvg} className="w-7" alt="plus" />
           <div className="antialiased font-sans text-lg font-bold">
             Education
           </div>
