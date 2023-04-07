@@ -8,5 +8,4 @@ export default defineConfig({
     extensions: ['.js', '.mjs'],
   },
   plugins: [react()],
-  base: '/odin-cv-application/',
 });
