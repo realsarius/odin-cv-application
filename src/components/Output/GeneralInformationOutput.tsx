@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-one-expression-per-line */
+import emailPng from '../../assets/mail-inbox-app.png';
 interface UserProps {
   name: string;
   job: string;
@@ -55,11 +56,7 @@ const GeneralInformation = ({
     >
       <p className="text-lg font-bold">{user.name}</p>
       <div className="text-sm flex items-center gap-2">
-        <img
-          src="src/assets/mail-inbox-app.png"
-          className="w-5"
-          alt="email-icon"
-        />{' '}
+        <img src={emailPng} className="w-5" alt="email-icon" />{' '}
         {checkIfEmailEmpty() ? (
           <p className="text-gray-500">Email</p>
         ) : (
