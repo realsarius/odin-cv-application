@@ -11,7 +11,7 @@ interface Education {
 }
 
 interface EducationInputAddProps {
-  addEducationState: string;
+  addEducationState: boolean;
   setAddEducationState: (state: boolean) => void;
   educationHandler: (education: Education) => void;
 }
